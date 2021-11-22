@@ -25,6 +25,9 @@ The repository is organized in six folders :
 - The file `ood_instance.yml` allows you to create the environment `ood_instance` by typing `conda env create -f ood_instance.yml` from the CLI. 
 - For each part of the paper, scripts have been executed to generate raw data. Based on this raw data, figures have been generated in dedicated notebooks. 
 
+## Models 
+
+For the main experiment, the model used is a ResNet 50 which can be directly downloaded from PyTorch. Model weights are available on request.
 
 # Motivation
 
