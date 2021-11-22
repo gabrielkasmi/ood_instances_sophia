@@ -21,7 +21,7 @@ The repository is organized in six folders :
 
 ## Set up and usage
 
-- Please note that for the scripts to work, the paths in the files should be replaced by your own paths. 
+- Please note that for the scripts to work, the paths in source scripts and the `config.yml` configuration file should be replaced by your own paths. Moreover, it may be necessary to create output directories.
 - Due to size constraints, only samples are provided for the background images. The complete folders are avaiable on request. 
 - The file `ood_instance.yml` allows you to create the environment `ood_instance` by typing `conda env create -f ood_instance.yml` from the CLI. 
 - For each part of the paper, scripts have been executed to generate raw data. Based on this raw data, figures have been generated in dedicated notebooks. 
