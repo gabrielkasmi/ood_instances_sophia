@@ -9,9 +9,10 @@ This folder contains the material for the creation of the synthetic datasets use
 
 The four `.py` scripts should be launched from the command line in the environment `ood_instance` and allow to construct the following datasets : 
 
-- The script `generate_dataset_.py` constructs a dataset with training, testing and validation folders with arrays of the `in_domain_arrays` folder and backgrounds from the folders `fields` and ``forest`.
-- The
-
+- The script `generate_dataset_.py` constructs a dataset with training, testing and validation folders with arrays of the `in_domain_arrays` folder and backgrounds from the folders `fields` and `forest`.
+- The script `ood_background_dataset_.py` constructs a dataset with testing data only with arrays of the `in_domain_arrays` folder and background `urban`.
+- The script `ood_instances_dataset` constructs a dataset with training, testing and validation folders with arrays of the `out_domain_arrays` folder and backgrounds from the folders `fields` and `forest`.
+- The script `ood_dataset.py` constructs a dataset with training, testing and validation folders with arrays of the `in_domain_arrays` folder and background from the folder `urban`.
 ## Important notice
 - Due to size constraints, only one sample image per background is provided. The original dataset use 1,000 images of the instance `forest` and `field` and 353 of the instance `urban`. Full folders are available on request.
 - In the four scripts, you may have to change the input and output directories in the arguments of the script for the function to work on your machine.
