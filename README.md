@@ -62,25 +62,6 @@ The questions we wish to address are the following :
 
 We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. 
 
-```math
-SE = \frac{\sigma}{\sqrt{n}}
-```
-
-
-The idea is to map the latent representation of an input image, denoted $`z\in\mathbb{R}^N`$ into factors $`
-\left(\Tilde{z}_k\right)_{k=0}^K
-`$ such that $\forall k \in\{0,\dots,K\},\;\Tilde{z}_k \in\mathbb{R}^{N_k}$ and $\displaystyle{
-\sum_{k=0}^K N_k = N
-}$. This mapping is done using an invertible neural network (IIN) $T$. Each factor is then interpreted as a given feature (e.g. animal species, shape, texture, color). Since the concepts we are interested in are not exhaustive, the factor $\Tilde{z}_0$ is introduced as a residual that captures the remaining variability, which is not identified by the factors in $\{1,\dots,K\}$. Semantic concepts are identified through their dimensionality: the most complex are assumed to have a larger dimensionality over the most simple ones.
-
-It is assumed that the factors are independent and follow a Gaussian distribution. The factors are identified using the similarity a given concept between two images $x^a$ and $x^b$ which given our assumptions translates into a positive mutual information between the latent representation of the input images. The dimensionality $N_F$ of the semantic concept $F$ is then derived from a score $s_F$. This score corresponds to the sum of the correlation coefficient between each component in the latent representation :
-
-\[
-s_F = \sum_{i=1}^N\frac{Cov(z_i^a, z_i^b)}{\sqrt{Var(z_i^a)Var(z_i^b)}} \in [-N,N]
-\]
-
-where $z_i$ denothes the $i$th component of $z$. The dimensionality of the residual factor then ensures that the dimensionality $N_F$ of the $F$th semantic factor is positive. We refer the reader to [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for more technical details.
-
 ### Results
 
 ## Sanity checks 
