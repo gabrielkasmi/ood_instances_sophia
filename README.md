@@ -5,6 +5,8 @@
 
 Material for the poster "how do solar array characteristics and images backgrounds affect OOD generalization" presented at [SophIA summit](https://univ-cotedazur.eu/events/sophia-summit).
 
+![Poster](poster.pdf)
+
 # Table of contents
 
 ## Overview
@@ -28,7 +30,7 @@ The repository is organized in six folders :
 
 ## Models 
 
-For the main experiment, the model used is a ResNet 50 which can be directly downloaded from PyTorch. Model weights are available on request.
+For the main experiments (OOD performance, heatmap and dimensionality estimation), the model used is a ResNet 50 which can be directly downloaded from PyTorch. Model weights are available on request.
 
 # Motivation and objectives
 
@@ -51,6 +53,22 @@ The questions we wish to address are the following :
 
 
 # Results
+
+## OOD performance
+
+## The impact of the source domain on OOD performance
+
+## Dimensionality estimates as an explanation for OOD performance
+
+### Methodology
+
+We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model.
+
+### Results
+
+## Sanity checks 
+
+In addition to the results rapported above, we conduct several sanity checks in order to see whether the dimensionality estimation measures are sensical. 
 
 # References 
 
