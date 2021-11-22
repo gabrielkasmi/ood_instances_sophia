@@ -60,9 +60,9 @@ The questions we wish to address are the following :
 
 ### Methodology
 
-We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. The idea is to map the latent representation of an input image, denoted $z\in\mathbb{R}^N$ into factors $\displaystyle{
+We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. The idea is to map the latent representation of an input image, denoted $`z\in\mathbb{R}^N`$ into factors $`
 \left(\Tilde{z}_k\right)_{k=0}^K
-}$ such that $\forall k \in\{0,\dots,K\},\;\Tilde{z}_k \in\mathbb{R}^{N_k}$ and $\displaystyle{
+`$ such that $\forall k \in\{0,\dots,K\},\;\Tilde{z}_k \in\mathbb{R}^{N_k}$ and $\displaystyle{
 \sum_{k=0}^K N_k = N
 }$. This mapping is done using an invertible neural network (IIN) $T$. Each factor is then interpreted as a given feature (e.g. animal species, shape, texture, color). Since the concepts we are interested in are not exhaustive, the factor $\Tilde{z}_0$ is introduced as a residual that captures the remaining variability, which is not identified by the factors in $\{1,\dots,K\}$. Semantic concepts are identified through their dimensionality: the most complex are assumed to have a larger dimensionality over the most simple ones.
 
