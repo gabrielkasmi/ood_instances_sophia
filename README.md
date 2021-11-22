@@ -7,9 +7,11 @@ Material for the poster "The effect of PV array instances and images backgrounds
 
 # Table of contents
 
+We provide an overview and a notice regarding the usage of the repository. A brief description of the work and the resutls is provided after this description.
+
 ## Overview
 
-The repository is organized in six folders :
+The repository is organized in seven folders :
 
 - The folder [`dataset`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/dataset) contains the scripts, the array masks and example images to replicate the synthetic dataset used for the experiments.
 - The folder [`ood_performance`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/ood_performance) contains the necessary material to replicate the data that is used to compute the figure 2 of the poster "F1 scores on the OOD datasets"
