@@ -34,3 +34,7 @@ The repository is organized in six folders :
 # References 
 
 Islam, M. A., Kowal, M., Esser, P., Jia, S., Ommer, B., Derpanis, K. G., & Bruce, N. (2021). Shape or texture: Understanding discriminative features in cnns. arXiv preprint [arXiv:2101.11604](https://arxiv.org/abs/2101.11604).
+
+Nagarajan, V., Andreassen, A., & Neyshabur, B. (2020). Understanding the failure modes of out-of-distribution generalization. arXiv preprint [arXiv:2010.15775](https://arxiv.org/abs/2010.15775).
+
+Wang, R., Camilo, J., Collins, L. M., Bradbury, K., & Malof, J. M. (2017, October). The poor generalization of deep convolutional networks to aerial imagery from new geographic locations: an empirical study with solar array detection. In [2017 IEEE Applied Imagery Pattern Recognition Workshop (AIPR) (pp. 1-8). IEEE](https://ieeexplore.ieee.org/document/8457965).
