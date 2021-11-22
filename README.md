@@ -64,7 +64,7 @@ The questions we wish to address are the following :
 
 ### Methodology
 
-We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. 
+We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. More details on the methodology can be found in the working papier `ood_generalization_wp.pdf` available in this repository.
 
 ### Results
 
