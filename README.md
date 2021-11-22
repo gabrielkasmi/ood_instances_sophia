@@ -34,9 +34,9 @@ For the main experiments (OOD performance, heatmap and dimensionality estimation
 
 # Motivation and objectives
 
-Deep learning based models for remote sensing of solar arrays often experience an impredictible performance drop when deployed to a new location ([Wang et. al. (2017)](https://ieeexplore.ieee.org/document/8457965)). This problem is known as the failure to generalize out-of-domain (OOD). In this poster, we design an experimental setup that aims at disentangling the impact of the background and the solar array type on OOD performance. 
+Deep learning based models for remote sensing of solar arrays often experience an impredictible performance drop when deployed to a new location ([Wang et. al. (2017)](https://ieeexplore.ieee.org/document/8457965)). This problem is caused by the fact that machine learning methods struggle to generalize out-of-domain (OOD). In this poster, we design an experimental setup that aims at disentangling the impact of the background and the solar array type on OOD performance. 
 
-The setup consists in a synthetic dataset that mixes different types of solar arrays (which we call "instances") and different types of background. The leverage this synthetic dataset to study OOD generalization in two directions : 
+The setup consists in a synthetic dataset that mixes different types of solar arrays (which we call "instances") and different types of background. We leverage this synthetic dataset to study OOD generalization in two directions : 
 - In the first case, we consider a fixed source dataset and see whether a model fails to generalize to new instances or new backgrounds
 - In the second case, we consider a fixed target dataset and see whether OOD generalization can be affected by the composition of the source dataset
 
