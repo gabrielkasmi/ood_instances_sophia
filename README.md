@@ -12,11 +12,12 @@ Material for the poster "how do solar array characteristics and images backgroun
 The repository is organized in six folders :
 
 - The folder [`dataset`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/dataset) contains the scripts, the array masks and example images to replicate the synthetic dataset used for the experiments.
-- The folder ood_scores contains the necessary material to replicate the data that is used to compute the figure 2 of the poster "F1 scores on the OOD datasets"
-- The folder heatmap contains the necessary material to replicate the data used to generate the heatmap (figure 3) of the poster "OOD F1 scores for different (background,instance) combinations"
-- The folder dimensionality_plots contains the material to compute plots of the dimensionality estimates using [Islam et. al. (2021)](https://arxiv.org/abs/2101.11604) dimensionality estimation technique.
+- The folder [`ood_performance`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/ood_performance) contains the necessary material to replicate the data that is used to compute the figure 2 of the poster "F1 scores on the OOD datasets"
+- The folder [`heatmap`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/heatmap) contains the necessary material to replicate the data used to generate the heatmap (figure 3) of the poster "OOD F1 scores for different (background,instance) combinations"
+- The folder [`dimensionality_estimation`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/dimensionality_estimation) contains the material to compute plots of the dimensionality estimates using [Islam et. al. (2021)](https://arxiv.org/abs/2101.11604) dimensionality estimation technique.
 - The folder [`misc`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/misc) contains additional material and the folder [`misc/data`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/misc/data). This folder contains the files used to generate the results of the poster.
 - The folder [`utils`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/utils) contains utility functions that are needed to run the scripts.
+- The folder [`figs`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/figs) contains the output figures.
 
 ## Set up and usage
 
@@ -29,9 +30,25 @@ The repository is organized in six folders :
 
 For the main experiment, the model used is a ResNet 50 which can be directly downloaded from PyTorch. Model weights are available on request.
 
-# Motivation
+# Motivation and objectives
+
+Deep learning based models for remote sensing of solar arrays often experience an impredictible performance drop when deployed to a new location ([Wang et. al. (2017)](https://ieeexplore.ieee.org/document/8457965)). This problem is known as the failure to generalize out-of-domain (OOD). In this poster, we design an experimental setup that aims at disentangling the impact of the background and the solar array type on OOD performance. 
+
+The setup consists in a synthetic dataset that mixes different types of solar arrays (which we call "instances") and different types of background. The leverage this synthetic dataset to study OOD generalization in two directions : 
+- In the first case, we consider a fixed source dataset and see whether a model fails to generalize to new instances or new backgrounds
+- In the second case, we consider a fixed target dataset and see whether OOD generalization can be affected by the composition of the source dataset
+
+In order to provide insights on the uneven ability to generalize, we leverage [Islam et al (2021)](https://arxiv.org/abs/2101.11604) dimensionality estimation technique to see whether depending on the instance and background, the number of dimensions in the latent that encode the semantic factors "solar array" and "background" varies.
+
+The questions we wish to address are the following : 
+
+- <b> Is the failure to generalize predominantly due to unseen arrays or unseen backgrounds ? </b>
+- <b> Has the type of background or array instance an influence on OOD performance ? </b>
+- <b> Can we quantify which types of backgrounds or solar arrays are better for generalization ? </b>
 
 # Synthetic dataset 
+
+
 
 # Results
 
@@ -42,3 +59,5 @@ Islam, M. A., Kowal, M., Esser, P., Jia, S., Ommer, B., Derpanis, K. G., & Bruce
 Nagarajan, V., Andreassen, A., & Neyshabur, B. (2020). Understanding the failure modes of out-of-distribution generalization. arXiv preprint [arXiv:2010.15775](https://arxiv.org/abs/2010.15775).
 
 Wang, R., Camilo, J., Collins, L. M., Bradbury, K., & Malof, J. M. (2017, October). The poor generalization of deep convolutional networks to aerial imagery from new geographic locations: an empirical study with solar array detection. In [2017 IEEE Applied Imagery Pattern Recognition Workshop (AIPR) (pp. 1-8). IEEE](https://ieeexplore.ieee.org/document/8457965).
+
+Cooper, A., Boix, X., Harari, D., Madan, S., Pfister, H., Sasaki, T., & Sinha, P. (2021). To Which Out-Of-Distribution Object Orientations Are DNNs Capable of Generalizing?. arXiv preprint [arXiv:2109.13445](https://arxiv.org/abs/2109.13445). 
