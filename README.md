@@ -54,7 +54,7 @@ The questions we wish to address are the following :
 
 ## OOD performance
 
-![F1 scores on the OOD datasets](https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/F1_score_in_domain_to_ood.png = 250x)
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/F1_score_in_domain_to_ood.png" width="200">
 
 
 ## The impact of the source domain on OOD performance
