@@ -5,9 +5,8 @@
 
 Material for the poster "how do solar array characteristics and images backgrounds affect OOD generalization" presented at [SophIA summit](https://univ-cotedazur.eu/events/sophia-summit).
 
-<object data="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/poster.pdf" type="application/pdf" width = "100%">
-</object>
 
+<embed src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/poster.pdf" type="application/pdf">
 
 # Table of contents
 
