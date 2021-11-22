@@ -3,7 +3,7 @@
 
 <b> Presented as a poster at SophIA Summit 2021 </b> 
 
-Material for the poster "how do solar array characteristics and images backgrounds affect OOD generalization" presented at [SophIA summit](https://univ-cotedazur.eu/events/sophia-summit).
+Material for the poster "The effect of PV array instances and images backgrounds on OOD generalization" presented at [SophIA summit](https://univ-cotedazur.eu/events/sophia-summit).
 
 # Table of contents
 
