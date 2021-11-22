@@ -15,7 +15,7 @@ The repository is organized in six folders :
 - The folder ood_scores contains the necessary material to replicate the data that is used to compute the figure 2 of the poster "F1 scores on the OOD datasets"
 - The folder heatmap contains the necessary material to replicate the data used to generate the heatmap (figure 3) of the poster "OOD F1 scores for different (background,instance) combinations"
 - The folder dimensionality_plots contains the material to compute plots of the dimensionality estimates using [Islam et. al. (2021)](https://arxiv.org/abs/2101.11604) dimensionality estimation technique.
-- The folder [`misc`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/misc) contains miscellaneous scripts and notebooks that have been used to compute the sanity checks and folder [`misc/data`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/misc/data). This folder contains the files used to generate the results of the poster.
+- The folder [`misc`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/misc) contains additional material and the folder [`misc/data`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/misc/data). This folder contains the files used to generate the results of the poster.
 - The folder [`utils`](https://github.com/gabrielkasmi/ood_instances_sophia/tree/main/utils) contains utility functions that are needed to run the scripts.
 
 ## Set up and usage
