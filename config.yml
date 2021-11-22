@@ -1,0 +1,62 @@
+# Configuration
+
+# -------- Directories --------
+# Specify (either absolute or relative paths) the following paths : 
+# - model_dir : where the final model will be saved
+# - dataset_dir : where the data is located
+# - figs_dir : where the output figures will be saved
+# - files_dir : where the statistics will be saved 
+models_dir : 'models'
+
+figs_dir : 'figs'
+files_dir : 'files'
+dataset_dir : 'PITW'
+label_name : 'labels.csv'
+
+# -------- Models --------
+# Specify which model to use as well as whether a model with
+# random initialization should be used. 
+# Specifies as well the path/to/weights in case the model inception is used 
+# Options : 
+# - inception : will load the inception model fined tuned on NRW
+# - resnet : will load a resnet50 and initialize it with random weights
+# - custom : will load a custom model. In this case, the path specified should contain the whole model.
+# (i.e. should be a whole .pth file that contains the model and the architecture)
+
+pretrained : True
+model : 'resnet'
+model_weight : '../models/inceptionv3_weights.tar'
+image_size : 299
+
+
+# -------- Dimensionality estimation --------
+# Required directories to perform the dimensionality estimation
+# Specify : 
+# - the path/to/model
+# - the model family : inherited from the 'Models' section
+# - the path/to/outputs
+# - the path/to/dataset : the path to the source dataset. Inherited from the 'Directories' section
+# - the path/to/figures : inherited from the 'Directories' dataset
+# - n_factors : the number of factors to consider
+# - residual_index : the index of the residual factor 
+#
+# The options
+# These options can be set up depending on the needs. 
+# - iSSanity : uses a different dummy dataloader (that loads both arrays and backgrounds)
+#   to check that the results are non random
+# - isReality : uses a different dataloader, that relies on real data, to compute
+#   the same quantities (dimensionality estimation for the array/background, array and background)
+#   but on a real dataset.
+  
+
+output_directory : 'results'
+inception_directory : 'models/overall_model.pth'
+resnet_init_directory : 'models/resnet_random_init.pth'
+resnet_pre_trained_directory : 'models/resnet_pretrained.pth'
+
+n_factors : 3
+residual_index : 2
+
+isSanity : False
+isReality : False
+
