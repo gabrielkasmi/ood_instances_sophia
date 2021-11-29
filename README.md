@@ -50,6 +50,34 @@ The questions we wish to address are the following :
 
 # Synthetic dataset 
 
+The synthetic dataset consists in two domains. A source domain, comprised of 80,000 samples with 4 array types and 2 background types and a target domain comprised of 4 array types (different from those of the source domain) and one background type. Each domain is splitted into training, validation and testing datasets. We also include to intermediate domain testing datasets, one containing source backgrounds and target arrays, and the other source arrays and the target background. 
+
+These images come from IGN aerial images, that are accessible [here]() and provided under open license.
+
+Samples from the background are depicted below : 
+
+<p align="center">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/fields/34-2018-0680-6245-LA93-0M20-E080_(10913.5%2C%2024667.5).png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/forest/34-2018-0700-6250-LA93-0M20-E080_(8222.5%2C%204933.5).png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/urban/34-2018-0690-6250-LA93-0M20-E080_(12109.5, 22275.5).png" width="250">
+</p>
+
+And samples from the in domain (leftmost and center left images) and out domain arrays (center right and rightmost images). 
+
+<p align="center">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/in_domain_arrays/LB_mask.png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/in_domain_arrays/SN_mask.png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/ood_arrays/ood_1_mask.png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/ood_arrays/ood_2_mask.png" width="250">
+</p>
+
+For each sample, the creation procedure is as follows : 
+- Apply random rotation, displacements and symmetries to the array and random rotation and symmetries to the background
+- With probability 1/2, apply the array on the image to generate a positively labelled image, otherwise leave the background as is to generate a negative sample. 
+
+The dataset is balanced, for one positive sample, one negative sample is generated. Each subgroup of data is also evenly represented. More precisely, the source domain includes 8 (array, instances) pairs and for each pair, we generate the same number of samples (positive and negatives). Moreover, we generate label files for each of the subgroups, as well as for group of subgroups in order to be able to train the model on subsamples of the training dataset only. 
+
+The target domain includes 4 (array, instances) pairs and for each pair, we generate the same number of samples. Intermediate domains are also balanced in terms of positive samples and type of arrays and backgrounds.
 
 
 # Results
