@@ -130,7 +130,11 @@ As it can be seen from the figure below, our results are inconclusive. All insta
 
 ## Sanity checks 
 
-In addition to the results rapported above, we conduct several sanity checks in order to see whether the dimensionality estimation measures are sensical. It turns out that when considering two random images, the estimated dimensionalities correspond to what one would expect if the mutual information between the images was equal to zero (rightmost figure). Besides, we also apply the methodology on real data and see that the estimated dimensionalities are of the same magnitude than in the experimental setting (leftmost). Both sanity checks have been done on three models, the Inception v3 model from [Rausch et. al (2020)](https://arxiv.org/abs/2012.03690) and a ResNet50, one with pretraining on ImageNet and the other with random initialization. All models are fined tuned on our synthetic dataset before the dimensionality estimation is carried out.
+In addition to the results rapported above, we conduct several sanity checks in order to see whether the dimensionality estimation measures are sensical. We first see how the dimensionality estiamtion varies when one factor is omitted. On the upper figure below, we estimate the dimensionality of the arrays only, then of the background only and finaly of both factors. We can see that the orders of magnitude remain the same, no matter whether the dimensionality of the two factors are estimated or only one. 
+
+Besides, we also apply the methodology on real data and see that the estimated dimensionalities are of the same magnitude than in the experimental setting (leftmost). Both sanity checks have been done on three models, the Inception v3 model from [Rausch et. al (2020)](https://arxiv.org/abs/2012.03690) and a ResNet50, one with pretraining on ImageNet and the other with random initialization. All models are fined tuned on our synthetic dataset before the dimensionality estimation is carried out. 
+
+These sanity checks highlight the fact that the dimensionality estimate is indeed well correlated with the mutual information between the two images of interest and that these estimates are not model dependent. Additional sanity checks are reported in the appendix of the working paper `ood_generalization_wp.pdf`.
 
 <p align="center">
 <img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/reality_check_plot.png" width="500">
