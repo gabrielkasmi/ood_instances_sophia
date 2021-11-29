@@ -56,26 +56,45 @@ The questions we wish to address are the following :
 
 ## OOD performance
 
+We first decompose the out-of-domain error into two components:
+- The error due to the fact that the model has to identify solar array instances that it has never seen before,
+- The error due to the fact that the model has to identify solar arrays over unseen backgrounds.
+
+To isolate these effects, we evaluate OOD performance in three settings:
+- 1. We consider new solar array instances but in domain backgrounds (lefmost boxplot)
+- 2. In-domain solar array instances but new backgroun (boxplot in the middle of the figure below)
+- 3. Out-of-domain array instances and backgrounds (rightmost boxtplot)
+
+We can see that the change in backgrounds drives the OOD error. Put otherwise, according to our experiment, if a model fails to generalize well out-of-domain, it is mostly due to the fact that out-of-domain samples depict unseen backgrounds. A possible explanation for this phenomenon is that when facing small objects such as solar arrays, detection models will heavily rely on background features to make their prediction. However, as recalled by [Gulrajani and Lopez-Paz (2020)](https://arxiv.org/abs/2007.01434) or [Nagarajan et. al. (2020)](https://arxiv.org/abs/2010.15775), features extracted from the background of the image are <i> spurious </i> features in the sense that they are likely to change when one is shifted from one domain to the other. 
+
+In order to further inspect the impact of the background and the type of solar array instance on OOD performance, we perform a second experiment where the target dataset remains fixed and the composition of the training dataset changes. Our hope is to show some backgrounds and some solar array instances can allow for a better OOD generalization than others.
+
 <p align="center">
 <img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/F1_score_in_domain_to_ood.png" width="250">
 </p>
 
 ## The impact of the source domain on OOD performance
 
+We now consider the reverse phenomenon and set a fixed OOD dataset with unseen array instances and an unseen background. The composition of the training dataset on the other hand varies : it contains more or less large or blue arrays (y-axis) and more or less images drawn over the fields background (x-axis). Each outputs the average F1 score of the model on the OOD dataset, given a fixed share of (background, array instance) in the training dataset. 
+
+We can see that the composition of the training dataset has an important impact on performance. Moreover, the final performance is more affected by the background than by the solar array instance. This conforts the idea according to which some background characteristics prevent the model from learning too many spurious features during training. In our case, a plausible explanation is that arrays are more contrasted on fields backgrounds than on forest backgrounds and therefore making the distinction between the background (which is irrelevant) and the foreground (i.e. the solar array) more explicit.
+
 <p align="center">
 <img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/heatmap_large_fields_scores.png" width="250">
 <img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/heatmap_blue_fields_scores.png" width="250">
 </p>
 
+
 ## Dimensionality estimates as an explanation for OOD performance
 
+Finally, we want to see whether it is possible to quantify the semantic concepts (namely solar array and background) that are learned during training in the latent representation of the model and use it as a predictor for OOD performance. The idea would be that the larger the dimensionality in the latent representation, the more detailed the representation of the semantic concept. Then, for the backgrounds, the smaller the dimensionality the better the OOD performance and for arrays, the larger the dimensionality the better the OOD generalization. 
 ### Methodology
 
 We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. More details on the methodology can be found in the working paper `ood_generalization_wp.pdf` available in this repository.
 
 ### Results
 
-As it can be seen from the figure below, our results are inconclusive. 
+As it can be seen from the figure below, our results are inconclusive. All instances of solar arrays have the same estimated dimensionality (around 400) and all types of backgrounds also have the same dimensionality estimation (around 400 as well). As such, based on these results, it is not possible to say that there is a correlation between the dimensionality of the instance and how it is suited for OOD generalisation.
 
 <p align="center">
 <img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/dimensionality_estimates.png" width="250">
@@ -83,16 +102,18 @@ As it can be seen from the figure below, our results are inconclusive.
 
 ## Sanity checks 
 
-In addition to the results rapported above, we conduct several sanity checks in order to see whether the dimensionality estimation measures are sensical. 
+In addition to the results rapported above, we conduct several sanity checks in order to see whether the dimensionality estimation measures are sensical. It turns out that when considering two random images, the estimated dimensionalities correspond to what one would expect if the mutual information between the images was equal to zero (rightmost figure). Besides, we also apply the methodology on real data and see that the estimated dimensionalities are of the same magnitude than in the experimental setting (leftmost). Both sanity checks have been done on three models, the Inception v3 model from [Rausch et. al (2020)](https://arxiv.org/abs/2012.03690) and a ResNet50, one with pretraining on ImageNet and the other with random initialization. All models are fined tuned on our synthetic dataset before the dimensionality estimation is carried out.
 
 <p align="center">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/reality_check_plot.png" width="250">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/sanity_check_plot.png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/reality_check_plot.png" width="300">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/sanity_check_plot.png" width="300">
 </p>
 
-# Future work
+# Summary and future work
 
+This experiment shows that for small object detection on overhead imagery, OOD performance is mostly affected by the background characteristics. A possible explanation is that some backgrounds allows for a better disentanglement between  <i> predictive </i> (i.e. correlated with the semantic label one wants to predict) and <i> spurious </i> (i.e. correlated with the training dataset) features. 
 
+Future work should therefore forcus on consolidating this claim in a more principled framework. To this end, it is necessary to take into account additional factors that can vary from one dataset to another such as the image characteristics (ground sampling distance, brightness, projection of the ground on the image). It is also necessary to show that on "good" backgrounds, the model does indeed extract <i> predictive </i> features.
 
 # References 
 
@@ -106,3 +127,6 @@ Cooper, A., Boix, X., Harari, D., Madan, S., Pfister, H., Sasaki, T., & Sinha, P
 
 Esser, P., Rombach, R., & Ommer, B. (2020). A disentangling invertible interpretation network for explaining latent representations. In [Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9223-9232)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html).
 
+Gulrajani, I., & Lopez-Paz, D. (2020). In search of lost domain generalization. arXiv preprint [arXiv:2007.01434](https://arxiv.org/abs/2007.01434).
+
+Rausch, B., Mayer, K., Arlt, M. L., Gust, G., Staudt, P., Weinhardt, C., ... & Rajagopal, R. (2020). An Enriched Automated PV Registry: Combining Image Recognition and 3D Building Data. arXiv preprint [arXiv:2012.03690](https://arxiv.org/abs/2012.03690).
