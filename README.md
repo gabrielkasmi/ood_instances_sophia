@@ -62,17 +62,37 @@ The questions we wish to address are the following :
 
 ## The impact of the source domain on OOD performance
 
+<p align="center">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/heatmap_large_fields_scores.png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/heatmap_blue_fields_scores.png" width="250">
+</p>
+
 ## Dimensionality estimates as an explanation for OOD performance
 
 ### Methodology
 
-We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. More details on the methodology can be found in the working papier `ood_generalization_wp.pdf` available in this repository.
+We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. More details on the methodology can be found in the working paper `ood_generalization_wp.pdf` available in this repository.
 
 ### Results
+
+As it can be seen from the figure below, our results are inconclusive. 
+
+<p align="center">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/dimensionality_estimates.png" width="250">
+</p>
 
 ## Sanity checks 
 
 In addition to the results rapported above, we conduct several sanity checks in order to see whether the dimensionality estimation measures are sensical. 
+
+<p align="center">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/reality_check_plot.png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/sanity_check_plot.png" width="250">
+</p>
+
+# Future work
+
+
 
 # References 
 
