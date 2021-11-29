@@ -103,7 +103,7 @@ In order to further inspect the impact of the background and the type of solar a
 
 ## The impact of the source domain on OOD performance
 
-We now consider the reverse phenomenon and set a fixed OOD dataset with unseen array instances and an unseen background. The composition of the training dataset on the other hand varies : it contains more or less large or blue arrays (y-axis) and more or less images drawn over the fields background (x-axis). Each outputs the average F1 score of the model on the OOD dataset, given a fixed share of (background, array instance) in the training dataset. 
+We now consider the reverse phenomenon and set a fixed OOD dataset with unseen array instances and an unseen background. The composition of the training dataset on the other hand varies : it contains more or less large or blue arrays (y-axis) and more or less images drawn over the fields background (x-axis). Each cell outputs the average F1 score of the model on the OOD dataset, given a fixed share of (background, array instance) in the training dataset. 
 
 We can see that the composition of the training dataset has an important impact on performance. Moreover, the final performance is more affected by the background than by the solar array instance. This conforts the idea according to which some background characteristics prevent the model from learning too many spurious features during training. In our case, a plausible explanation is that arrays are more contrasted on fields backgrounds than on forest backgrounds and therefore making the distinction between the background (which is irrelevant) and the foreground (i.e. the solar array) more explicit.
 
