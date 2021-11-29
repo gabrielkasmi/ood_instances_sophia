@@ -57,18 +57,18 @@ These images come from IGN aerial images, that are accessible [here]() and provi
 Samples from the background are depicted below : 
 
 <p align="center">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/fields/34-2018-0680-6245-LA93-0M20-E080_(10913.5%2C%2024667.5).png" width="250">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/forest/34-2018-0700-6250-LA93-0M20-E080_(8222.5%2C%204933.5).png" width="250">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/urban/34-2018-0690-6250-LA93-0M20-E080_(12109.5, 22275.5).png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/fields/34-2018-0680-6245-LA93-0M20-E080_(10913.5%2C%2024667.5).png" width="200">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/forest/34-2018-0700-6250-LA93-0M20-E080_(8222.5%2C%204933.5).png" width="200">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/backgrounds/urban/34-2018-0690-6250-LA93-0M20-E080_(12109.5, 22275.5).png" width="200">
 </p>
 
 And samples from the in domain (leftmost and center left images) and out domain arrays (center right and rightmost images). 
 
 <p align="center">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/in_domain_arrays/LB_mask.png" width="250">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/in_domain_arrays/SN_mask.png" width="250">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/ood_arrays/ood_1_mask.png" width="250">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/ood_arrays/ood_2_mask.png" width="250">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/in_domain_arrays/LB_mask.png" width="200">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/in_domain_arrays/SN_mask.png" width="200">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/ood_arrays/ood_1_mask.png" width="200">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/dataset/arrays/ood_arrays/ood_2_mask.png" width="200">
 </p>
 
 For each sample, the creation procedure is as follows : 
