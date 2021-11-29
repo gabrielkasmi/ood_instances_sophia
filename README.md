@@ -133,8 +133,8 @@ As it can be seen from the figure below, our results are inconclusive. All insta
 In addition to the results rapported above, we conduct several sanity checks in order to see whether the dimensionality estimation measures are sensical. It turns out that when considering two random images, the estimated dimensionalities correspond to what one would expect if the mutual information between the images was equal to zero (rightmost figure). Besides, we also apply the methodology on real data and see that the estimated dimensionalities are of the same magnitude than in the experimental setting (leftmost). Both sanity checks have been done on three models, the Inception v3 model from [Rausch et. al (2020)](https://arxiv.org/abs/2012.03690) and a ResNet50, one with pretraining on ImageNet and the other with random initialization. All models are fined tuned on our synthetic dataset before the dimensionality estimation is carried out.
 
 <p align="center">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/reality_check_plot.png" width="300">
-<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/sanity_check_plot.png" width="300">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/reality_check_plot.png" width="500">
+<img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/sanity_check_plot.png" width="500">
 </p>
 
 # Summary and future work
