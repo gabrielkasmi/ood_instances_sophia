@@ -118,7 +118,7 @@ We can see that the composition of the training dataset has an important impact 
 Finally, we want to see whether it is possible to quantify the semantic concepts (namely solar array and background) that are learned during training in the latent representation of the model and use it as a predictor for OOD performance. The idea would be that the larger the dimensionality in the latent representation, the more detailed the representation of the semantic concept. Then, for the backgrounds, the smaller the dimensionality the better the OOD performance and for arrays, the larger the dimensionality the better the OOD generalization. 
 ### Methodology
 
-We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. More details on the methodology can be found in the working paper `ood_generalization_wp.pdf` available in this repository.
+We apply the methodology proposed by [Islam et al (2021)](https://arxiv.org/abs/2101.11604) to estimate the dimension of the semantic factors "solar array" and "backgrounds" in the representation computed by the model. The starting point is the method proposed by [Esser et. al. (2020)](https://openaccess.thecvf.com/content_CVPR_2020/html/Esser_A_Disentangling_Invertible_Interpretation_Network_for_Explaining_Latent_Representations_CVPR_2020_paper.html) for explaining latent representation. More details on the methodology can be found in the working paper [`ood_generalization_wp.pdf`](https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/ood_generalization_wp.pdf).
 
 ### Results
 
@@ -134,7 +134,7 @@ In addition to the results rapported above, we conduct several sanity checks in 
 
 Besides, we also apply the methodology on real data and see that the estimated dimensionalities are of the same magnitude than in the experimental setting (leftmost). Both sanity checks have been done on three models, the Inception v3 model from [Rausch et. al (2020)](https://arxiv.org/abs/2012.03690) and a ResNet50, one with pretraining on ImageNet and the other with random initialization. All models are fined tuned on our synthetic dataset before the dimensionality estimation is carried out. 
 
-These sanity checks highlight the fact that the dimensionality estimate is indeed well correlated with the mutual information between the two images of interest and that these estimates are not model dependent. Additional sanity checks are reported in the appendix of the working paper `ood_generalization_wp.pdf`.
+These sanity checks highlight the fact that the dimensionality estimate is indeed well correlated with the mutual information between the two images of interest and that these estimates are not model dependent. Additional sanity checks are reported in the appendix of the working paper [`ood_generalization_wp.pdf`](https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/ood_generalization_wp.pdf).
 
 <p align="center">
 <img src="https://github.com/gabrielkasmi/ood_instances_sophia/blob/main/figs/display/reality_check_plot.png" width="500">
